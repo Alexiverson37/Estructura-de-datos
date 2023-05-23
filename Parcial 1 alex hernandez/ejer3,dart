@@ -1,0 +1,19 @@
+import 'dart:math';
+var random = Random();
+var lista1 = List.generate(5, (index) => random.nextInt(100));
+
+import 'dart:io';
+var lista2 = [];
+for (var i = 0; i < 5; i++) {
+  print('Ingrese un entero:');
+  var input = stdin.readLineSync();
+  lista2.add(int.parse(input));
+}
+
+var lista3 = lista1 + lista2; // usando el operador +
+lista1.addAll(lista2); // usando el método addAll()
+
+lista3.insertAll(6, [14, 20, 7]); // insertar en el índice 6
+var suma = lista3.reduce((a, b) => a + b);
+var promedio = suma / lista3.length;
+lista3.sort((a, b) => b.compareTo(a)); // comparar b con a para orden descendent
